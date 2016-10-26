@@ -1,4 +1,18 @@
 body {
-	background: url(https://s-media-cache-ak0.pinimg.com/originals/29/25/6b/29256b38c5d0694cffb4a6cc3f61ac50.jpg);
-	background-size: cover; 
+/*	background: url(https://s-media-cache-ak0.pinimg.com/originals/29/25/6b/29256b38c5d0694cffb4a6cc3f61ac50.jpg),
+	background-size: cover; */
+	background: lightgrey;
+}
+
+h1 {
+	text-align: center;
+}
+
+#button {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#gifsAppearHere {
+	text-align: center;
 }
