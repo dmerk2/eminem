@@ -25,13 +25,12 @@ var inputBox = $('#giphy-input')
 $('#findGiphy').on('click', function(){
 	var userChoice = $('#giphy-input').val();
 	renderImage(userChoice);
-	console.log(choiceArray);
 });
 
-function renderImage (userChoice) {
+function renderImage(userChoice) {
 		var image = $('<img>');
 		image.text(userChoice);
-		$('#giphyButton').append(images);
+		$('#giphyButton').append(image);
 		
 		return false;
 		var giphy = $(this).data('giphy');
@@ -46,18 +45,12 @@ function renderImage (userChoice) {
 
 			for (var i = 0; i < response.data.length; i++) {
 				var giphyDiv = response.data[i].images.fixed_height.url;
-				var giphyImage = $('<img>');
-				giphyImage.attr('src', giphyDiv);
-				giphyImage.attr('alt', 'giphyImage');
-				$('#giphyView').prepend(giphyImage);
-		};
-	});   
+				image.attr('src', giphyDiv);
+				image.attr('alt', 'image');
+				$('#giphyView').prepend(image);
+ 		  };
+	 });   
 };
-
-
-
-	
-	
 
 
 //Eminem Giphys
@@ -65,25 +58,19 @@ $('button').on('click', function() {
 	var p = $(this).data('person');
 	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + p + "&api_key=dc6zaTOxFJmzC&limit=20";
 
-		$.ajax({
-	 		url: queryURL,
-	  	method: 'GET'
-		})
-		.done(function(response) {
-			console.log(response)
-			var results = response.data;
+		$.ajax({url: queryURL, method: 'GET'})
+			.done(function(response) {
+				console.log(response);
+				var results = response.data;
 
-			for (var i = 0; i < response.data.length; i++) {
-				var imageUrl = response.data[i].images.fixed_height.url;
+				for (var i = 0; i < response.data.length; i++) {
+					var imageUrl = response.data[i].images.fixed_height.url;
 
-    		var personImage = $('<img>');
-		    personImage.attr('src', imageUrl);
-		    personImage.attr('alt', 'personImage');
+	    		var personImage = $('<img>');
+			    personImage.attr('src', imageUrl);
+			    personImage.attr('alt', 'personImage');
 
-		    $("#gifsAppearHere").prepend(personImage);
-		    // console.log(p);
-		    // console.log(results)
-		    // console.log(personImage)
-			};  	
-		});
-});
+			    $("#gifsAppearHere").prepend(personImage);
+				};  	
+		 });
+	});
