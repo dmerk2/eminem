@@ -6,6 +6,7 @@ body {
 
 h1 {
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 #button {
@@ -17,10 +18,22 @@ h1 {
 	text-align: center;
 }
 
-.container{
+.container {
 	text-align: center;
 }
 
 #giphy-form {
 	text-align: center;
+}
+
+#findMovie {
+	margin: 20px 0 20px 0;
+}
+
+#giphy {
+	margin: 20px 0 20px 0;
+}
+
+#findGiphy {
+	margin: 20px 0 20px 0;
 }
